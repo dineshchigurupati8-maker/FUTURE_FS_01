@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional software development portfolio showcasing recent projects and technical skills.">
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content,
+.project-card,
+.skill-tag,
+.about-text,
+.contact-container {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* ===============================
+   GLASSMORPHISM EFFECT
+================================= */
+
+.project-card,
+.skill-tag,
+form {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===============================
+   HERO SECTION ENHANCEMENT
+================================= */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(0, 123, 255, 0.08);
+    border-radius: 50%;
+    top: -150px;
+    right: -150px;
+    z-index: -1;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 123, 255, 0.05);
+    border-radius: 50%;
+    bottom: -120px;
+    left: -120px;
+    z-index: -1;
+}
+
+/* ===============================
+   NAVBAR IMPROVEMENT
+================================= */
+
+header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   BUTTON EFFECTS
+================================= */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 300%;
+    background: rgba(255,255,255,0.15);
+    top: -100%;
+    left: -20%;
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+.btn:hover::before {
+    width: 120%;
+}
+
+/* ===============================
+   PROJECT CARD STYLING
+================================= */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+}
+
+/* ===============================
+   SKILL TAG HOVER EFFECT
+================================= */
+
+.skill-tag {
+    transition: 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--accent);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   FORM STYLING
+================================= */
+
+form {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.form-group input,
+.form-group textarea {
+    transition: 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: var(--accent);
+}
+
+/* ===============================
+   CUSTOM SCROLLBAR
+================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* ===============================
+   SECTION SPACING
+================================= */
+
+section {
+    position: relative;
+}
+
+/* ===============================
+   FOOTER EFFECT
+================================= */
+
+footer {
+    transition: 0.3s ease;
+}
+
+footer:hover {
+    color: var(--accent);
+}
+
+/* ===============================
+   MOBILE MENU IMPROVEMENTS
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        height: auto;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===============================
+   FLOATING ANIMATION
+================================= */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-content h1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ===============================
+   ACTIVE SECTION HIGHLIGHT
+================================= */
+
+html {
+    scroll-padding-top: 100px;
+}
+
+/* ===============================
+   SOFT SHADOWS
+================================= */
+
+.project-card,
+form,
+.skill-tag {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h3>Hi there, I am</h3>
+            <h1>CHIGURUPATI SESHA SAI DINESH</h1>
+            <p>A software engineering student focused on designing clean frontend interfaces and building functional, reliable applications.</p>
+            <a href="#projects" class="btn">Explore Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>I enjoy breaking down complex problems and translating them into structured, readable code. Currently pursuing my tech studies, I balance my coursework with independent building and practical development projects.</p>
+                <p>My goal is to create responsive web layouts and smooth interfaces that offer straightforward solutions to real-world tasks.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-tag"><i class="fab fa-html5" style="color: #e34c26;"></i> HTML5</div>
+                <div class="skill-tag"><i class="fab fa-css3-alt" style="color: #264de4;"></i> CSS3</div>
+                <div class="skill-tag"><i class="fab fa-js-square" style="color: #f7df1e;"></i> JavaScript</div>
+                <div class="skill-tag"><i class="fab fa-react" style="color: #61dbfb;"></i> React.js</div>
+                <div class="skill-tag"><i class="fas fa-code" style="color: #007acc;"></i> C Programming</div>
+                <div class="skill-tag"><i class="fas fa-database" style="color: #336791;"></i> SQL Data</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <h3>Management Dashboard</h3>
+                    <p>A structured scheduling tool tailored for managing classes, timeline updates, and user coordination from a unified dashboard layout.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                  
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>Community Issue Platform</h3>
+                    <p>An application layout built to log workflow steps, trace neighborhood requests, and coordinate public updates via an organized system design.</p>
+                    <div class="project-tech">
+                        <span>React</span><span>Web Design</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" autocomplete="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" autocomplete="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Personal Portfolio. Designed and built independently.</p>
+    </footer>
+
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const icon = themeBtn.querySelector('i');
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('portfolio-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('portfolio-theme', 'dark');
+            }
+        });
+
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            icon.className = 'fas fa-sun';
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            alert(`Thank you for reaching out, ${name}! Your form submitted successfully.`);
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
